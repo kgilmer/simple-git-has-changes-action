@@ -1,0 +1,13 @@
+name: 'Check for Git Changes'
+description: 'If the git repo has changes, return true, otherwise false'
+outputs:
+  git-changed:
+    description: "Git has changes"
+    value: ${{ steps.git-changed.outputs.git-changes }}
+runs:
+  using: "composite"
+  steps:
+    - id: git-changed
+      run: |
+        ${{ github.action_path }}/check-git-status.sh
+      shell: bash
