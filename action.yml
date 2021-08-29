@@ -1,7 +1,7 @@
 name: 'Check for Git Changes'
 description: 'If the git repo has changes, return true, otherwise false'
 outputs:
-  git-changed:
+  changed:
     description: "Git has changes"
     value: ${{ steps.git-changed.outputs.git-changes }}
 runs:
